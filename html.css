@@ -1,7 +1,14 @@
-      .js{
+    .js{
         font-weight: bold;
         color:lightcoral;
       }
-        #first{
+    #first{
           color:lightseagreen;
         }
+    span{
+        color:green;
+    }
+    #clock{
+        color:darkcyan;
+    }
+    

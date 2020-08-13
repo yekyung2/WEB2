@@ -79,18 +79,19 @@ init();
       ">   
 
       <input id="night_day" type="button" value="night" onclick="
-      if(document.querySelector('#night_day').value ==='night'){
-      document.querySelector('body').style.backgroundColor='black'; 
-      document.querySelector('body').style.color='white';
-      document.querySelector('#night_day').value ='day'; 
+      var target = document.querySelector('body');
+      if(this.value ==='night'){
+      target.style.backgroundColor='black'; 
+      target.style.color='white';
+      this.value ='day'; 
       } else{
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';
-      document.querySelector('#night_day').value ='night';
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value ='night';
       }
-      ">
+      "> 
 
-        <h2>Web</h2>
+        <h2>Web</h2> 
         <p>
           <span id="first"> A website </span> (also written as web site) is a collection of web pages and related content that is identified by a common domain name and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com.
           All publicly accessible websites collectively constitute the World Wide Web. There are also private websites that can only be accessed on a private network, such as a company's internal website for its employees.
@@ -108,4 +109,17 @@ init();
   
       <span> Understand? </span><input type="checkbox">
       
+
+      <input id="night_day2" type="button" value="night" onclick="
+      if(this.value ==='night'){
+      document.querySelector('body').style.backgroundColor='black'; 
+      document.querySelector('body').style.color='white';
+      this.value ='day'; 
+      } else{
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+      this.value ='night';
+      }
+      ">
+
         </body>
