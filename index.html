@@ -4,41 +4,43 @@
     <title>WEb 1- Javascript </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="html.css">
+    
     <script>
-     /*나이트-데이모드 전환시 바디 텍스트 컬러 전환 함수*/
-     function BodySetColor(color){
-     document.querySelector('body').style.color=color;
+     /*나이트-데이모드 전환시 바디 텍스트 & 바디 백그리운드 컬러 전환 함수*/
+     var Body = {
+       setColor:function (color){
+       document.querySelector('body').style.color = color;},
+       setBackgroundColor:function (color){
+      document.querySelector('body').style.backgroundColor = color;
       }
-
-      /*나이트-데이모드 전환시 바디 백그라운드 컬러 전환 함수*/
-      function BodySetBackGroundColor(color){
-      document.querySelector('body').style.backgroundColor=color;
-      }
-
+    }
+     
     /* 나이트-데이모드 전환시 링크 컬러 전환 함수. 함수 실행 시, 변인에 원하는 색상 입력*/
-    function LinksSetColor(color){
-      var alist = document.querySelectorAll('a');
+    var Links = {
+      setColor:function(color){
+        var alist = document.querySelectorAll('a');
         var i = 0;
         while(i<alist.length){
           alist[i].style.color = color;
-          i = i+1;
-        }      
+          i = i+1;}
+      }
     }
+    
     /* 나이트 모드 전환시 body 텍스트 및 링크 컬러 변경 함수*/
     function nightDayHandler(self){
         var target = document.querySelector('body');
         if(self.value ==='night'){
-          BodySetBackGroundColor('black'); 
-          BodySetColor('white');
+          Body.setBackgroundColor('black'); 
+          Body.setColor('white');
           self.value ='day'; 
-          LinksSetColor('powderblue');
+          Links.setColor('powderblue');
 
       }
         else{
-        BodySetBackGroundColor('white');
-        BodySetColor('black');
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
         self.value ='night';
-        LinksSetColor('black');
+        Links.setColor('black');
         }
     }
 </script>
