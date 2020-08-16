@@ -3,117 +3,14 @@
 <head>
     <title>WEb 1- Javascript </title>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="colors.js"></script>
     <link rel="stylesheet" href="html.css">
-    
-    <script>
-     /*나이트-데이모드 전환시 바디 텍스트 & 바디 백그리운드 컬러 전환 함수*/
-     var Body = {
-       setColor:function (color){
-       document.querySelector('body').style.color = color;},
-       setBackgroundColor:function (color){
-      document.querySelector('body').style.backgroundColor = color;
-      }
-    }
-     
-    /* 나이트-데이모드 전환시 링크 컬러 전환 함수. 함수 실행 시, 변인에 원하는 색상 입력*/
-    var Links = {
-      setColor:function(color){
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i<alist.length){
-          alist[i].style.color = color;
-          i = i+1;}
-      }
-    }
-    
-    /* 나이트 모드 전환시 body 텍스트 및 링크 컬러 변경 함수*/
-    function nightDayHandler(self){
-        var target = document.querySelector('body');
-        if(self.value ==='night'){
-          Body.setBackgroundColor('black'); 
-          Body.setColor('white');
-          self.value ='day'; 
-          Links.setColor('powderblue');
-
-      }
-        else{
-        Body.setBackgroundColor('white');
-        Body.setColor('black');
-        self.value ='night';
-        Links.setColor('black');
-        }
-    }
-</script>
-
-
 </head>
 
 
     <body>
       <h1><a href="index.html"> WEB</a></h1>
-      <h2> Datetime</h2>
-      <h2 id="clock" style="color:maroon;"> 00:00</h2>
-
-<script>
-var clockTarget = document.getElementById("clock");
-
-function clock() {
-    var date = new Date();
-
-    // date Object를 받아오고 
-    var month = date.getMonth();
-
-    // 달을 받아옵니다 
-    var clockDate = date.getDate();
-
-    // 몇일인지 받아옵니다 
-    var day = date.getDay();
-
-    // 요일을 받아옵니다. 
-    var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-    // 요일은 숫자형태로 리턴되기때문에 미리 배열을 만듭니다. 
-    var hours = date.getHours();
-
-    // 시간을 받아오고 
-    var minutes = date.getMinutes();
-
-    // 분도 받아옵니다.
-    var seconds = date.getSeconds();
-
-    // 초까지 받아온후 
-    clockTarget .innerText = `${month+1}/${clockDate} ${week[day]} ` +
-
-    `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes }`  : minutes }:${seconds < 10 ? `0${seconds }`  : seconds }`;
-
-    // 월은 0부터 1월이기때문에 +1일을 해주고 
-
-    // 시간 분 초는 한자리수이면 시계가 어색해보일까봐 10보다 작으면 앞에0을 붙혀주는 작업을 3항연산으로 했습니다. 
-}
-
-
-
-function init() {
-
-clock();
-
-// 최초에 함수를 한번 실행시켜주고 
-setInterval(clock, 1000);
-
-// setInterval이라는 함수로 매초마다 실행을 해줍니다.
-
-// setInterval은 첫번째 파라메터는 함수이고 두번째는 시간인데 밀리초단위로 받습니다. 1000 = 1초 
-
-}
-
-
-
-init();
-
-
-</script>
-
-      <br> <br>
       <input type="button" value="night" onclick="
       document.querySelector('body').style.backgroundColor='black'; 
       document.querySelector('body').style.color='white';
